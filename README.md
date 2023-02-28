@@ -1,2 +1,1 @@
-# DefenseGame
- Defense Game for DEU-IEEE
+Defense Game for DEU-IEEE
