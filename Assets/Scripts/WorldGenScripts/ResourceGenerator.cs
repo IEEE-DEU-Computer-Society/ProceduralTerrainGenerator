@@ -44,11 +44,11 @@ public class ResourceGenerator : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(firstPoint, new Vector3(chunkSize * 2,chunkSize * 2));
-        Gizmos.DrawSphere(spawnPoint1,0.5f);
-        Gizmos.DrawSphere(spawnPoint2, 0.5f);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireCube(firstPoint, new Vector3(chunkSize * 2,chunkSize * 2));
+    //     Gizmos.DrawSphere(spawnPoint1,0.5f);
+    //     Gizmos.DrawSphere(spawnPoint2, 0.5f);
+    // }
 }
