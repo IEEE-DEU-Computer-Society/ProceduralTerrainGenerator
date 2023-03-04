@@ -6,15 +6,12 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     
     //movement variables
-    public float horizontalMoveInput;
-    public float verticalMoveInput;
-    public float speed = 15f;
+    public Vector2 moveInput;
+    public Vector2 speed = new Vector2(15f,15f);
     
     void Update()
     {
-        horizontalMoveInput = Input.GetAxisRaw("Horizontal");
-        verticalMoveInput = Input.GetAxisRaw("Vertical");
-
-        rb.velocity = new Vector2(speed * horizontalMoveInput, speed * verticalMoveInput);
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        rb.velocity = moveInput * speed;
     }
 }
