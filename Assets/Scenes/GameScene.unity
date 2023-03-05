@@ -7596,8 +7596,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2013050438}
-  - component: {fileID: 2013050439}
   - component: {fileID: 2013050440}
+  - component: {fileID: 2013050441}
   m_Layer: 0
   m_Name: ResourceGenerator
   m_TagString: Untagged
@@ -7620,7 +7620,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2013050439
+--- !u!114 &2013050440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7629,35 +7629,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2013050436}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 037b2649c1d64e644a210c32e133fb52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2013050440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013050436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25189af656bdebe428bf78bbc034cfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
   chunk: {fileID: 2383237153459942586, guid: 2e9c01174894eac4c957a2c314476fa4, type: 3}
-  nonSuitablePointsList: []
+  unSuitablePointsList: []
   resource: {fileID: 7783153299706667133, guid: f2d0d355a030a5c468c0a8a58c7c620c, type: 3}
   chunkRange: 2
   topRightX: 20
-  topRightY: 11
+  topRightY: 10
   isAutoControl: 0
   resourceAmount13: 0
   chunkAmount13: 0
-  chunkDistance: 5
+  chunkDistance: 15
   resourceDistance: 2
-  minChunkNumber: 1
-  maxChunkNumber: 1
+  minChunkNumber: 8
+  maxChunkNumber: 8
   minResourceNumber: 3
   maxResourceNumber: 3
   chunkNumber: 0
@@ -7668,6 +7656,41 @@ MonoBehaviour:
   resourcePosition: {x: 0, y: 0}
   isSuitable: 0
   unSuitablePointNumber: 0
+--- !u!114 &2013050441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013050436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dac249f46eea9840910fdd53b99618b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 1
+  chunk: {fileID: 2383237153459942586, guid: 2e9c01174894eac4c957a2c314476fa4, type: 3}
+  resource: {fileID: 7783153299706667133, guid: f2d0d355a030a5c468c0a8a58c7c620c, type: 3}
+  chunkRange: 2
+  topRightX: 20
+  topRightY: 10
+  isAutoControl: 0
+  resourceAmount14: 0
+  chunkAmount14: 0
+  chunkDistance: 5
+  resourceDistance: 2
+  minChunkNumber: 1
+  maxChunkNumber: 1
+  minResourceNumber: 7
+  maxResourceNumber: 7
+  chunkNumber: 0
+  resourceNumber: 0
+  suitableChunkPointList: []
+  suitableResourcePointList: []
+  toDeletedList: []
+  selectedPoint: 0
+  chunkPosition: {x: 0, y: 0}
+  resourcePosition: {x: 0, y: 0}
 --- !u!1001 &299159866569727894
 PrefabInstance:
   m_ObjectHideFlags: 0
