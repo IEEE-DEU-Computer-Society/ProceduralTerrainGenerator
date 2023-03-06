@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    //TODO feature: auto chunk number depending on map size - few, normal, many
-    //TODO feature: auto resource number depending on chunk size - few, normal, many
+    //TODO make the probabilities of the resources selectable from the inspector
+    //TODO terrain recognition
     
     /* WHAT THIS SCRIPT DO
      * creates square chunks in a designated area
@@ -30,17 +30,12 @@ public class ResourceGenerator : MonoBehaviour
     public GameObject chunk;
     
     [Header("Assign")]
-    public GameObject resource;
+    public List<GameObject> resourcePrefabs;
     public int chunkRange;
     public int topRightX;
     public int topRightY;
-
-    [Header("Auto Control")]
-    public bool isAutoControl;
-    public int resourceAmount14;
-    public int chunkAmount14;
     
-    [Header("Manual Control")]
+    [Header("Assign")]
     public int chunkDistance;
     public int resourceDistance;
     public int minChunkNumber;
@@ -48,38 +43,30 @@ public class ResourceGenerator : MonoBehaviour
     public int minResourceNumber;
     public int maxResourceNumber;
 
-    [Header("Variables - Don't Touch")]
+    [Header("The numbers Mason, what do they mean? - Don't Touch")]
+    public GameObject resource;
+    public int resourceCode;
     public int chunkNumber;
     public int resourceNumber;
     public List<Vector2> suitableChunkPointList;
     public List<Vector2> suitableResourcePointList;
     public List<Vector2> toDeletedList;
-
-    [Header("The numbers Mason, what do they mean?")]
     public int selectedPoint;
     public Vector2 chunkPosition;
     public Vector2 resourcePosition;
     
     private void OnDrawGizmosSelected()
     {
-        if (isDebug)
+        Gizmos.color = Color.red;
+        foreach (Vector2 point in suitableChunkPointList)
         {
-            foreach (Vector2 point in suitableChunkPointList)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(point, 0.5f);
-            }
+            Gizmos.DrawWireSphere(point, 0.5f);
         }
-    }
-
-    private void AutoGen()
-    {
-        
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))    //SCAN THE MAP FIRST AND ONCE
         {
             for (int i = -topRightX; i < topRightX; i++)
             {
@@ -90,7 +77,7 @@ public class ResourceGenerator : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //SPAWN RESOURCES
         {
             chunkNumber = Random.Range(minChunkNumber, maxChunkNumber + 1);
             for (int i = 0; i < chunkNumber; i++)
@@ -102,7 +89,10 @@ public class ResourceGenerator : MonoBehaviour
                 
                 selectedPoint = Random.Range(0, suitableChunkPointList.Count);
                 chunkPosition = suitableChunkPointList[selectedPoint];
-                Instantiate(chunk, chunkPosition, quaternion.identity);
+                if (isDebug)
+                {
+                    Instantiate(chunk, chunkPosition, quaternion.identity);
+                }
                 
                 foreach (Vector2 point in suitableChunkPointList)
                 {
@@ -126,7 +116,23 @@ public class ResourceGenerator : MonoBehaviour
                         suitableResourcePointList.Add(new Vector2(j,k));
                     }
                 }
+
+                resourceCode = Random.Range(0, 10);
+                if (resourceCode <= 9 && resourceCode >= 4)
+                {
+                    resource = resourcePrefabs[0];
+                }
                 
+                else if(resourceCode <= 3 && resourceCode >= 1)
+                {
+                    resource = resourcePrefabs[1];
+                }
+
+                else
+                {
+                    resource = resourcePrefabs[2];
+                }
+
                 resourceNumber = Random.Range(minResourceNumber, maxResourceNumber);
                 for (int j = 0; j < resourceNumber; j++)
                 {
