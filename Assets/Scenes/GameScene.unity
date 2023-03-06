@@ -7235,7 +7235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499345092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: 9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7431,7 +7431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727639492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7552,10 +7552,10 @@ MonoBehaviour:
   - {fileID: 7783153299706667133, guid: 396bf430a9fed9045ba2971b332430f7, type: 3}
   - {fileID: 7783153299706667133, guid: 8f9f9a4b4346dc74f861c233dd4513b6, type: 3}
   chunkRange: 2
-  topRightX: 30
-  topRightY: 20
-  chunkDistance: 6
-  resourceDistance: 1
+  topRightX: 20
+  topRightY: 10
+  chunkDistance: 5
+  resourceDistance: 2
   minChunkNumber: 1
   maxChunkNumber: 1
   minResourceNumber: 3
