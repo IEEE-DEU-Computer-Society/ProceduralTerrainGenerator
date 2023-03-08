@@ -7,6 +7,7 @@ TagManager:
   - Core
   - Enemy
   - Resource
+  - enemy
   layers:
   - Default
   - TransparentFX
