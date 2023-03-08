@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/PlayerBullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/PlayerBullet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/TuretMain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/TuretMain.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/barrel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/barrel.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/zone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/sprites/zone.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/NavMesh-NavMesh 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene/NavMesh-NavMesh 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene/NavMesh-NavMesh 2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene/NavMesh-NavMesh 2.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +22,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemySight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/ResourceGenerator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -137,7 +124,7 @@
       <workItem from="1678069068249" duration="1738000" />
       <workItem from="1678118460168" duration="3183000" />
       <workItem from="1678124383565" duration="649000" />
-      <workItem from="1678274219804" duration="13265000" />
+      <workItem from="1678274219804" duration="15852000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>

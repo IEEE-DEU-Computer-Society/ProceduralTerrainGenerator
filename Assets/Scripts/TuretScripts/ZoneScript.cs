@@ -33,7 +33,7 @@ public class ZoneScript : MonoBehaviour
     {
         if (col.gameObject.tag== "enemy")
         {
-            Debug.Log("Dusman icerde!!");
+            
             
             if (timer > 2)
             {
@@ -43,8 +43,8 @@ public class ZoneScript : MonoBehaviour
             
         }
             
-        if(col.gameObject.tag == "Player")
-            Debug.Log("Player icerde!!");
+       
+       
     }
     
     private void OnTriggerExit2D(Collider2D other)

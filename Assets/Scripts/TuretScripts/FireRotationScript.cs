@@ -10,7 +10,7 @@ public class FireRotationScript : MonoBehaviour
 
     public Rigidbody2D rgb;
 
-    public float force;
+    public float force = 8;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,17 +33,19 @@ public class FireRotationScript : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            StartCoroutine(Hit());
-           
+
             
-            Debug.Log("Do somthing!!");
+            StartCoroutine(Hit());
+            this.GetComponent<SpriteRenderer>().enabled = false;
+
+
         }
         
     }
 
     IEnumerator Hit()
     {
-        enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+        enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(enemy.transform.position.x-transform.position.x,enemy.transform.position.y-transform.position.y);
         yield return new WaitForSeconds(0.2f);
         enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
