@@ -1043,7 +1043,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 474b48315b2678f4db898c1711cf9a19, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f179dc2c168b2e243a41adeac812752e, type: 2}
 --- !u!4 &548588624
 Transform:
   m_ObjectHideFlags: 0
@@ -7591,7 +7591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7879,75 +7879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4539803708393337554, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
   m_PrefabInstance: {fileID: 2094933457}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2013050436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2013050438}
-  - component: {fileID: 2013050439}
-  m_Layer: 0
-  m_Name: ResourceGenerator
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2013050438
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013050436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2013050439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013050436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dac249f46eea9840910fdd53b99618b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDebug: 1
-  chunk: {fileID: 2383237153459942586, guid: 2e9c01174894eac4c957a2c314476fa4, type: 3}
-  resourcePrefabs:
-  - {fileID: 7783153299706667133, guid: f2d0d355a030a5c468c0a8a58c7c620c, type: 3}
-  - {fileID: 7783153299706667133, guid: 396bf430a9fed9045ba2971b332430f7, type: 3}
-  - {fileID: 7783153299706667133, guid: 8f9f9a4b4346dc74f861c233dd4513b6, type: 3}
-  chunkRange: 2
-  topRightX: 20
-  topRightY: 10
-  chunkDistance: 5
-  resourceDistance: 2
-  minChunkNumber: 1
-  maxChunkNumber: 1
-  minResourceNumber: 3
-  maxResourceNumber: 3
-  resource: {fileID: 0}
-  resourceCode: 0
-  chunkNumber: 0
-  resourceNumber: 0
-  suitableChunkPointList: []
-  suitableResourcePointList: []
-  toDeletedList: []
-  selectedPoint: 0
-  chunkPosition: {x: 0, y: 0}
-  resourcePosition: {x: 0, y: 0}
 --- !u!4 &2016063613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4539803708393337554, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
@@ -7986,7 +7917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8210,7 +8141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8319,7 +8250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 769881943696133142, guid: 77b37b4cfb588f740a797e7d5fee3c6b, type: 3}
       propertyPath: m_LocalPosition.x
