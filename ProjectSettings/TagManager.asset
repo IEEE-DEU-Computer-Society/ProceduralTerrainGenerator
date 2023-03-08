@@ -10,6 +10,7 @@ TagManager:
   - Resource1
   - Resource2
   - Resource3
+  - enemy
   layers:
   - Default
   - TransparentFX
