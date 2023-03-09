@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.251585
+  orthographic size: 6.24469
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -0.25, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -234,7 +234,6 @@ GameObject:
   - component: {fileID: 660400295}
   - component: {fileID: 660400293}
   - component: {fileID: 660400294}
-  - component: {fileID: 660400296}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -250,41 +249,51 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660400292}
   m_Enabled: 1
-  m_Tiles: {}
+  m_Tiles:
+  - first: {x: 94, y: 72, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 5a1ec9fbff342344eb437b92e6e89bcf, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 0
+  - m_RefCount: 1
     m_Data:
-      e00: 1e-45
+      e00: 1
       e01: 0
-      e02: 6.225783e+19
-      e03: 6.225783e+19
+      e02: 0
+      e03: 0
       e10: 0
-      e11: 0
-      e12: 4.65e-43
-      e13: 4.65e-43
-      e20: 9.583723e-13
-      e21: 1e-45
-      e22: -2.368642e-19
-      e23: -903.7285
-      e30: 4.5905e-41
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
       e31: 0
-      e32: 4.65e-43
-      e33: 4.65e-43
+      e32: 0
+      e33: 1
   m_TileColorArray:
-  - m_RefCount: 0
-    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+  - m_RefCount: 1
+    m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -17, y: -8, z: 0}
-  m_Size: {x: 17, y: 9, z: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 95, y: 73, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -324,7 +333,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 320e59ff0ead8e840995691e013437a3, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,22 +377,6 @@ Transform:
   m_Father: {fileID: 1725838635}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!19719996 &660400296
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660400292}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
 --- !u!1 &1499345092
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,27 +654,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 660400293}
-  blue: {fileID: 11400000, guid: 58e8f594e17f89d42a2521a96ef0d533, type: 2}
-  green: {fileID: 11400000, guid: 6e55d08ab218292429aa910f6a32dffd, type: 2}
-  gray: {fileID: 11400000, guid: dd85d621b4e820f45b71526d65b6fe0f, type: 2}
-  white: {fileID: 11400000, guid: 6287cbb0b30c72c4da5e1eae915be8ad, type: 2}
-  blueRange: {x: 0, y: 0.25}
-  greenRange: {x: 0.25, y: 0.5}
-  grayRange: {x: 0.5, y: 0.75}
-  whiteRange: {x: 0.75, y: 1}
-  mapWidth: 30
-  mapLength: 30
-  noiseScale: 1
-  octaveNumber: 5
-  seed: 0
-  lacunarity: 1
-  persistence: 1
-  manualOffset: {x: 0, y: 0}
-  noise: 0
-  minNoise: 0
-  maxNoise: 0
-  octaveOffsets: []
-  xOffset: 0
-  yOffset: 0
-  frequency: 0
-  amplitude: 0
+  blue: {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
+  red: {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
+  green: {fileID: 11400000, guid: 1b5abb07c87ad0f42aa47d5fa64e0433, type: 2}
+  pink: {fileID: 11400000, guid: 45fcb62d29a5dd743acdaa4c7135d589, type: 2}
+  gray: {fileID: 11400000, guid: c1ee657e605b7c14d9a38b5a5aabb034, type: 2}
+  purple: {fileID: 11400000, guid: 37e66c538ccdf44468cc8484e611a316, type: 2}
+  white: {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
+  black: {fileID: 11400000, guid: b200ab406bcb0c9409913c6ea96d6461, type: 2}
+  brown: {fileID: 11400000, guid: 3b1493b6e1082664fa6125b9d1610116, type: 2}
+  blueLimit: 0
+  redLimit: 0
+  greenLimit: 0
+  pinkLimit: 0
+  grayLimit: 0
+  purpleLimit: 0
+  whiteLimit: 0
+  blackLimit: 0
+  brownLimit: 0
+  mapWidth: 100
+  mapLength: 100
+  seed: 1
+  octaveNumber: 2
+  manualOffset: {x: 13, y: 3.18}
+  noiseScale: 18.28
+  lacunarity: 0.354
+  persistence: 0.195
+  noise: -0.16841254
+  minNoise: -0.94984585
+  maxNoise: 0.87015504
+  octaveOffsets:
+  - {x: -99923.94, y: -54849.383}
+  - {x: -36183.766, y: 7911.938}
+  xOffset: -36183.766
+  yOffset: 7911.938
+  frequency: 0.12531601
+  amplitude: 0.038024995
