@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.24469
+  orthographic size: 9.913548
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 19.6, y: 8.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886a0595d1bc20445b071129c87d7ffe, type: 3}
   m_Name: 
@@ -249,51 +249,49 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660400292}
   m_Enabled: 1
-  m_Tiles:
-  - first: {x: 94, y: 72, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+  m_Tiles: {}
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 5a1ec9fbff342344eb437b92e6e89bcf, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data:
-      e00: 1
+      e00: 9.677379e-29
       e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
+      e02: -3.820179
+      e03: -3.820179
+      e10: 6.6e-43
+      e11: 0
+      e12: 6.59e-43
+      e13: 6.59e-43
+      e20: 4.0474765e+36
+      e21: 2.9503e-41
+      e22: 4.538052e-29
+      e23: 8.674361e+9
+      e30: 4.5904e-41
       e31: 0
-      e32: 0
-      e33: 1
+      e32: 6.6e-43
+      e33: 6.63e-43
   m_TileColorArray:
-  - m_RefCount: 1
-    m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 3.3603e-41, g: 3.3603e-41, b: 3.3603e-41, a: 3.3603e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 95, y: 73, z: 1}
+  m_Size: {x: 100, y: 100, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -580,8 +578,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2013050438}
-  - component: {fileID: 2013050440}
   - component: {fileID: 2013050439}
+  - component: {fileID: 2013050440}
+  - component: {fileID: 2013050441}
   m_Layer: 0
   m_Name: WorldGenerator
   m_TagString: GameController
@@ -648,7 +647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013050436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9428a56e24f2bd4096e1ccfab2b7da1, type: 3}
   m_Name: 
@@ -663,30 +662,63 @@ MonoBehaviour:
   white: {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
   black: {fileID: 11400000, guid: b200ab406bcb0c9409913c6ea96d6461, type: 2}
   brown: {fileID: 11400000, guid: 3b1493b6e1082664fa6125b9d1610116, type: 2}
-  blueLimit: 0
+  blueLimit: 0.409
   redLimit: 0
-  greenLimit: 0
+  greenLimit: 0.643
   pinkLimit: 0
-  grayLimit: 0
+  grayLimit: 0.811
   purpleLimit: 0
   whiteLimit: 0
   blackLimit: 0
   brownLimit: 0
+  alternateAlgorithm: 1
   mapWidth: 100
   mapLength: 100
   seed: 1
   octaveNumber: 2
-  manualOffset: {x: 13, y: 3.18}
-  noiseScale: 18.28
-  lacunarity: 0.354
-  persistence: 0.195
-  noise: -0.16841254
-  minNoise: -0.94984585
-  maxNoise: 0.87015504
+  manualOffset: {x: 0, y: 0}
+  noiseScale: 12.28
+  lacunarity: 4.09
+  persistence: 0.097
+  noise: -0.12043951
+  perlinValue: 0.18989384
+  minNoise: -1.0553336
+  maxNoise: 0.9544399
   octaveOffsets:
-  - {x: -99923.94, y: -54849.383}
-  - {x: -36183.766, y: 7911.938}
-  xOffset: -36183.766
-  yOffset: 7911.938
-  frequency: 0.12531601
-  amplitude: 0.038024995
+  - {x: -99936.94, y: -54852.562}
+  - {x: -36196.766, y: 7908.758}
+  xOffset: -36196.766
+  yOffset: 7908.758
+  frequency: 16.728102
+  amplitude: 0.009409
+--- !u!114 &2013050441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013050436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5087a4bdd40f7240baadc2cd8b961ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 660400293}
+  tileList:
+  - {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
+  - {fileID: 11400000, guid: 1b5abb07c87ad0f42aa47d5fa64e0433, type: 2}
+  - {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
+  - {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
+  - {fileID: 11400000, guid: 37e66c538ccdf44468cc8484e611a316, type: 2}
+  mapWidth: 50
+  mapLength: 50
+  seed: 0
+  biomeNumber: 5
+  paintChanceDefault: 100
+  paintChanceDecreaseAmount: 0.2
+  paintChanceDecreaseChance: 0
+  paintChance: 0
+  startingTile: {x: 0, y: 0}
+  suitableTileList: []
+  toPaintList: []
+  toAddList: []

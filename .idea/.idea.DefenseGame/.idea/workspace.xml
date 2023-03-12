@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/AlternateGeneration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/AlternateGeneration.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/TerrainGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/TerrainGenerator.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +18,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4bba812690714c578170328b4ec178d0136818/63/f8e68170/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4bba812690714c578170328b4ec178d0136818/d4/a6769c8d/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ab/09ec9ed4/Single.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c3c66fd2767c44a085aa0b03bbe98b2c7400/74/c74e8a7e/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/e5/0373b55f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemySight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/AlternateGeneration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/ResourceGenerator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -83,10 +89,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2088">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2088" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -124,6 +130,11 @@
       <workItem from="1678124383565" duration="649000" />
       <workItem from="1678309464301" duration="882000" />
       <workItem from="1678318302588" duration="3934000" />
+      <workItem from="1678327517013" duration="23345000" />
+      <workItem from="1678431761256" duration="7895000" />
+      <workItem from="1678512267247" duration="19759000" />
+      <workItem from="1678574998205" duration="2969000" />
+      <workItem from="1678600653952" duration="18176000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>
@@ -146,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677992972411</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="perlin noise completed">
+      <created>1678352156447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678352156447</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +179,8 @@
     <MESSAGE value="player movement and camera follow added" />
     <MESSAGE value="crash issue solved but not efficient yet" />
     <MESSAGE value="efficient resource generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="efficient resource generator" />
+    <MESSAGE value="perlin noise completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="perlin noise completed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
