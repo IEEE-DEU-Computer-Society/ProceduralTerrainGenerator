@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -6,29 +5,68 @@ using Random = UnityEngine.Random;
 
 public class AlternateGeneration : MonoBehaviour
 {
+    /* WHAT THIS SCRIPT DO
+     * chooses a random tile and randomly expands from that tile
+     * has an expansion chance which is decreasing everytime
+     * when expansion stops, a new biome starts from a random tile
+     *
+     * biomes sizes are configurable
+     */
+    
+    /* PSEUDOCODE
+     * get biomes
+     * get map size
+     * get spread chance and it's decrease amount
+     * get biome size limits
+     * get seed
+     * create suitableTileList and toPaintList
+     * create toAddList because C# doesn't allow to change a list in a foreach loop that is using that list
+     * 
+     * A - foreach biome in the biomeList
+     * choose a random tile from suitableTileList and add it to toPaintList
+     * delete selected tile from suitableTileList
+     * 
+     * B - foreach tile in the toPaintList
+     * paint the tile
+     * select a random int between 0-100
+     * if that number is smaller than spread chance, (which means spreading)
+     * -> add tile's suitable neighbors to toAddList
+     * -> remove them from suitableTileList
+     * -> decrease spread chance and go B
+     * else, go to B (which means not spreading)
+     * B loop ending
+     * 
+     * clear toPaintList and add tiles from toAddList to toPaintList
+     * if toPaintList is empty, go to A
+     * else, go to B
+     * A loops ending
+     */
+    
     [Header("Assign - Textures")]
     public Tilemap tilemap;
-    public List<Tile> tileList;
+    public List<Tile> biomeList;
 
     [Header("Assign - Information")]
     public int mapWidth;
     public int mapLength;
     public int seed;
-    public int biomeNumber;
-    //public int minBiomeSize;
-    //public int maxBiomeSize;
+    public int minBiomeSize;
+    public int maxBiomeSize;
     
     [Header("Assign - Multipliers")]
-    public float paintChanceDefault;
-    public float paintChanceDecreaseAmount;
-    public float paintChanceDecreaseChance;
-
+    public float spreadChanceDefault;
+    public float spreadChanceDecreaseAmount;
+    
     [Header("Variables - Don't Touch")]
-    public float paintChance;
+    public float spreadChance;
     public Vector2Int startingTile;
     public List<Vector2Int> suitableTileList;
     public List<Vector2Int> toPaintList;
     public List<Vector2Int> toAddList;
+
+    [Header("Map Data - Don't Touch")]
+    public List<Dictionary<Vector2Int, Tile>> mapDataList;
+    public List<Vector2Int> currentBiomList;
 
     private void OnDrawGizmos()
     {
@@ -52,14 +90,14 @@ public class AlternateGeneration : MonoBehaviour
         
         //generating biomes
         Random.InitState(seed);
-        for (int i = 0; i < biomeNumber; i++)
+        foreach (Tile biomTile in biomeList) 
         {
             if (suitableTileList.Count == 0)
             {
                 break;
             }
 
-            paintChance = paintChanceDefault;
+            spreadChance = spreadChanceDefault;
             startingTile = suitableTileList[Random.Range(0, suitableTileList.Count + 1)];
             toPaintList.Add(startingTile);
             suitableTileList.Remove(startingTile);
@@ -68,12 +106,12 @@ public class AlternateGeneration : MonoBehaviour
             {
                 foreach (Vector2Int item in toPaintList)
                 {
-                    Debug.Log("forech");
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), tileList[i]);
+                    Debug.Log("foric acid");
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), biomTile);
                     
-                    if (Random.Range(0, 101) <= paintChance)
+                    if (Random.Range(0, 101) <= spreadChance)
                     {
-                        paintChance -= paintChanceDecreaseAmount;
+                        spreadChance -= spreadChanceDecreaseAmount;
                         if (suitableTileList.Contains(item + Vector2Int.up))
                         {
                             toAddList.Add(item + Vector2Int.up);
@@ -104,12 +142,6 @@ public class AlternateGeneration : MonoBehaviour
                 }
                 toAddList.Clear();
             }
-
-            foreach (Vector2Int item in toPaintList)
-            {
-                suitableTileList.Add(item);
-            }
-            toPaintList.Clear();
         }
         //generating biomes
     }

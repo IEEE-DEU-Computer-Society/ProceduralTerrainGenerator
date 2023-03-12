@@ -258,7 +258,15 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -268,22 +276,22 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 9.677379e-29
+      e00: 1.1938195e-28
       e01: 0
-      e02: -3.820179
-      e03: -3.820179
-      e10: 6.6e-43
+      e02: -1.8717794e-19
+      e03: -1.8717794e-19
+      e10: 9.74e-43
       e11: 0
-      e12: 6.59e-43
-      e13: 6.59e-43
+      e12: 9.73e-43
+      e13: 9.73e-43
       e20: 4.0474765e+36
-      e21: 2.9503e-41
-      e22: 4.538052e-29
-      e23: 8.674361e+9
+      e21: 5.164e-42
+      e22: 1.1966698e-28
+      e23: 3.72561e+19
       e30: 4.5904e-41
       e31: 0
-      e32: 6.6e-43
-      e33: 6.63e-43
+      e32: 9.74e-43
+      e33: 9.77e-43
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 3.3603e-41, g: 3.3603e-41, b: 3.3603e-41, a: 3.3603e-41}
@@ -704,20 +712,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 660400293}
-  tileList:
+  biomeList:
+  - {fileID: 11400000, guid: b200ab406bcb0c9409913c6ea96d6461, type: 2}
   - {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
+  - {fileID: 11400000, guid: 3b1493b6e1082664fa6125b9d1610116, type: 2}
+  - {fileID: 11400000, guid: c1ee657e605b7c14d9a38b5a5aabb034, type: 2}
   - {fileID: 11400000, guid: 1b5abb07c87ad0f42aa47d5fa64e0433, type: 2}
-  - {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
-  - {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
+  - {fileID: 11400000, guid: 45fcb62d29a5dd743acdaa4c7135d589, type: 2}
   - {fileID: 11400000, guid: 37e66c538ccdf44468cc8484e611a316, type: 2}
+  - {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
+  - {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
   mapWidth: 50
   mapLength: 50
   seed: 0
-  biomeNumber: 5
-  paintChanceDefault: 100
-  paintChanceDecreaseAmount: 0.2
-  paintChanceDecreaseChance: 0
-  paintChance: 0
+  minBiomeSize: 0
+  maxBiomeSize: 0
+  spreadChanceDefault: 100
+  spreadChanceDecreaseAmount: 0.2
+  spreadChance: 0
   startingTile: {x: 0, y: 0}
   suitableTileList: []
   toPaintList: []
