@@ -5,9 +5,6 @@ using Random = UnityEngine.Random;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    //TODO make the probabilities of the resources selectable from the inspector
-    //TODO terrain recognition
-    
     /* WHAT THIS SCRIPT DO
      * creates square chunks in a designated area
      * number and size of the chunks are configurable
@@ -43,7 +40,7 @@ public class ResourceGenerator : MonoBehaviour
     public int minResourceNumber;
     public int maxResourceNumber;
 
-    [Header("The numbers Mason, what do they mean? - Don't Touch")]
+    [Header("Variables - Don't Touch")]
     public GameObject resource;
     public int resourceCode;
     public int chunkNumber;
