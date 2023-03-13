@@ -7,26 +7,18 @@ public class PerlinTerrainGenerator : MonoBehaviour
 {
     [Header("Assign - Textures")]
     public Tilemap tilemap;
-    public Tile blue;
-    public Tile red;
-    public Tile green;
-    public Tile pink;
-    public Tile gray;
-    public Tile purple;
-    public Tile white;
-    public Tile black;
-    public Tile brown;
+    public Tile layerOne;
+    public Tile layerTwo;
+    public Tile layerThree;
+    public Tile layerFour;
+    public Tile layerFive;
 
     [Header("Assign - Texture Ranges")]
-    [Range(0f, 1f)] public float redLimit;
-    [Range(0f, 1f)] public float greenLimit;
-    [Range(0f, 1f)] public float pinkLimit;
-    [Range(0f, 1f)] public float grayLimit;
-    [Range(0f, 1f)] public float purpleLimit;
-    [Range(0f ,1f)] public float blueLimit;
-    [Range(0f, 1f)] public float whiteLimit;
-    [Range(0f, 1f)] public float blackLimit;
-    [Range(0f, 1f)] public float brownLimit;
+    [Range(0f, 1f)] public float layerOneLimit;
+    [Range(0f, 1f)] public float layerTwoLimit;
+    [Range(0f, 1f)] public float layerThreeLimit;
+    [Range(0f, 1f)] public float layerFourLimit;
+    [Range(0f, 1f)] public float layerFiveLimit;
 
     [Header("Alternate Algorithm")]
     public bool alternateAlgorithm;
@@ -55,7 +47,7 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public float frequency;
     public float amplitude;
 
-    private void Start() //UPDATE FOR EDIT / START FOR PLAY
+    private void Update() //UPDATE FOR EDIT / START FOR PLAY
     { 
         //reset
         tilemap.ClearAllTiles();
@@ -150,49 +142,26 @@ public class PerlinTerrainGenerator : MonoBehaviour
         {
             for (int y = 0; y < mapLength; y++)
             {
-                if (noiseMap[x,y] > 0 && noiseMap[x,y] <= redLimit)
+                if (noiseMap[x,y] > 0 && noiseMap[x,y] <= layerOneLimit)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), red);
+                    tilemap.SetTile(new Vector3Int(x,y,0), layerOne);
                 }
-                    
-                else if (noiseMap[x,y] > redLimit && noiseMap[x,y] <= greenLimit)
+                else if (noiseMap[x,y] > layerOneLimit && noiseMap[x,y] <= layerTwoLimit)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), green);
-                }
-                
-                else if (noiseMap[x,y] > greenLimit && noiseMap[x,y] <= pinkLimit)
-                {
-                    tilemap.SetTile(new Vector3Int(x,y,0), pink);
-                }
-                    
-                else if (noiseMap[x,y] > pinkLimit && noiseMap[x,y] <= grayLimit)
-                {
-                    tilemap.SetTile(new Vector3Int(x,y,0), gray);
+                    tilemap.SetTile(new Vector3Int(x,y,0), layerTwo);
                 }
                 
-                else if (noiseMap[x,y] > grayLimit && noiseMap[x,y] <= purpleLimit)
+                else if (noiseMap[x,y] > layerTwoLimit && noiseMap[x,y] <= layerThreeLimit)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), purple);
+                    tilemap.SetTile(new Vector3Int(x,y,0), layerThree);
                 }
-                
-                else if (noiseMap[x,y] >= purpleLimit && noiseMap[x,y] <= blueLimit)
+                else if (noiseMap[x,y] > layerThreeLimit && noiseMap[x,y] <= layerFourLimit)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), blue);
+                    tilemap.SetTile(new Vector3Int(x,y,0), layerFour);
                 }
-                    
-                else if (noiseMap[x,y] > blueLimit && noiseMap[x,y] <= whiteLimit)
+                else if (noiseMap[x,y] > layerFourLimit && noiseMap[x,y] <= layerFiveLimit)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), white);
-                }
-                
-                else if (noiseMap[x,y] > whiteLimit && noiseMap[x,y] <= blackLimit)
-                {
-                    tilemap.SetTile(new Vector3Int(x,y,0), black);
-                }
-                
-                else if (noiseMap[x,y] > blackLimit && noiseMap[x,y] <= brownLimit)
-                {
-                    tilemap.SetTile(new Vector3Int(x,y,0), brown);
+                    tilemap.SetTile(new Vector3Int(x,y,0), layerFive);
                 }
             }
         }
