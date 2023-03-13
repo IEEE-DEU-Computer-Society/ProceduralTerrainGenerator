@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/ResourceCollector.cs.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" afterDir="false" />
@@ -84,6 +85,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resource3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,9 +200,19 @@
       <workItem from="1678069068249" duration="1738000" />
       <workItem from="1678118460168" duration="3183000" />
       <workItem from="1678124383565" duration="649000" />
+<<<<<<< Updated upstream
       <workItem from="1678195571165" duration="809000" />
       <workItem from="1678197385023" duration="7315000" />
       <workItem from="1678208552710" duration="1242000" />
+=======
+      <workItem from="1678274219804" duration="15852000" />
+      <workItem from="1678356823156" duration="3267000" />
+      <workItem from="1678363410304" duration="937000" />
+      <workItem from="1678365113101" duration="5000" />
+      <workItem from="1678367546286" duration="889000" />
+      <workItem from="1678383868707" duration="300000" />
+      <workItem from="1678696055721" duration="2898000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>
