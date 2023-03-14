@@ -47,7 +47,7 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public float frequency;
     public float amplitude;
 
-    private void Start() //UPDATE FOR EDIT / START FOR PLAY
+    private void Update() //UPDATE FOR EDIT / START FOR PLAY
     { 
         //reset
         tilemap.ClearAllTiles();
@@ -142,7 +142,7 @@ public class PerlinTerrainGenerator : MonoBehaviour
         {
             for (int y = 0; y < mapLength; y++)
             {
-                if (noiseMap[x,y] >= 0 && noiseMap[x,y] <= layerOneLimit)
+                if (noiseMap[x,y] > 0 && noiseMap[x,y] <= layerOneLimit)
                 {
                     tilemap.SetTile(new Vector3Int(x,y,0), layerOne);
                 }
@@ -166,7 +166,5 @@ public class PerlinTerrainGenerator : MonoBehaviour
             }
         }
         //generating textures
-        
-        Debug.Log(noiseMap[0,59]);
     }
 }

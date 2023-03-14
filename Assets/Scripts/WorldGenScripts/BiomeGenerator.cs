@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -35,7 +36,15 @@ public class BiomeGenerator : MonoBehaviour
     public float spreadChance;
     public List<Vector2Int> toPaintList;
     public List<Vector2Int> toAddList;
-   
+    
+    private void OnDrawGizmos()
+    {
+        foreach (Vector2Int item in blankList)
+        {
+            Gizmos.DrawWireSphere(new Vector3(item.x + 0.5f,item.y + 0.5f), 0.5f);
+        }
+    }
+
     private void Start()
     {
         //initializing dictionary
@@ -64,16 +73,14 @@ public class BiomeGenerator : MonoBehaviour
         
             while (toPaintList.Count != 0)
             {
-                Debug.Log("log1");
                 foreach (Vector2Int item in toPaintList)
                 {
-                    Debug.Log("log2");
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), biomTile);
                     mapDataList.Add(item, biomTile);
                     currentTilesList.Add(item);
                 
                     if (Random.Range(0, 101) <= spreadChance)
                     {
-                        Debug.Log("log3");
                         spreadChance -= spreadChanceDecreaseAmount;
                         if (suitableTileList.Contains(item + Vector2Int.up))
                         {
@@ -87,12 +94,12 @@ public class BiomeGenerator : MonoBehaviour
                         }
                         if (suitableTileList.Contains(item + Vector2Int.left))
                         {
-                            toAddList.Add(item + Vector2Int.left);
+                            toAddList.Add(item + Vector2Int.left);;
                             suitableTileList.Remove(item + Vector2Int.left);
                         }
                         if (suitableTileList.Contains(item + Vector2Int.right))
                         {
-                            toAddList.Add(item + Vector2Int.right);
+                            toAddList.Add(item + Vector2Int.right);;
                             suitableTileList.Remove(item + Vector2Int.right);
                         }
                     }
@@ -101,10 +108,8 @@ public class BiomeGenerator : MonoBehaviour
 
                 if (currentTilesList.Count > maxBiomeSize)
                 {
-                    Debug.Log("log4");
                     foreach (Vector2Int item in toAddList)
                     {
-                        Debug.Log("log5");
                         suitableTileList.Add(item);
                     }
                     toAddList.Clear();
@@ -113,7 +118,6 @@ public class BiomeGenerator : MonoBehaviour
         
                 foreach (Vector2Int item in toAddList)
                 {
-                    Debug.Log("log6");
                     toPaintList.Add(item);
                 }
                 toAddList.Clear();
@@ -123,7 +127,7 @@ public class BiomeGenerator : MonoBehaviour
             {
                 foreach (Vector2Int item in currentTilesList)
                 {
-                    Debug.Log("log7");
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), null);
                     mapDataList.Remove(item);
                     blankList.Add(item);
                 }
@@ -138,29 +142,28 @@ public class BiomeGenerator : MonoBehaviour
             int increase = 1;
             while (true)
             {
-                Debug.Log("log8");
                 if (mapDataList.ContainsKey(new Vector2Int(item.x + increase, item.y)))
                 {
                     encounteredTile = mapDataList[new Vector2Int(item.x + increase, item.y)];
-                    mapDataList.Add(item,encounteredTile);
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
                     break;
                 }
                 if (mapDataList.ContainsKey(new Vector2Int(item.x - increase, item.y)))
                 {
                     encounteredTile = mapDataList[new Vector2Int(item.x - increase, item.y)];
-                    mapDataList.Add(item,encounteredTile);
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
                     break;
                 }
                 if (mapDataList.ContainsKey(new Vector2Int(item.x, item.y + increase)))
                 {
                     encounteredTile = mapDataList[new Vector2Int(item.x, item.y + increase)];
-                    mapDataList.Add(item,encounteredTile);
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
                     break;
                 }
                 if (mapDataList.ContainsKey(new Vector2Int(item.x, item.y - increase)))
                 {
                     encounteredTile = mapDataList[new Vector2Int(item.x, item.y - increase)];
-                    mapDataList.Add(item,encounteredTile);
+                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
                     break;
                 }
                 increase++;
@@ -168,13 +171,5 @@ public class BiomeGenerator : MonoBehaviour
         }
         blankList.Clear();
         //filling the blanks
-        
-        //generating textures
-        foreach (var item in mapDataList)
-        {
-            Debug.Log("log9");
-            tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), item.Value);
-        }
-        //generating textures
     }
 }
