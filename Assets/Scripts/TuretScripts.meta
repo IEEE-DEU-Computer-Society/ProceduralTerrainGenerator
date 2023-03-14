@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scenes/yagizScene/NavMesh-NavMesh 1.asset.meta
-guid: 3edb96768e451e9459ee1c354d62605e
+<<<<<<<< HEAD:Assets/Tiles/pink.asset.meta
+guid: 45fcb62d29a5dd743acdaa4c7135d589
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
 ========
 guid: 6b660360d0b3eb947960f419f3b3b824
 folderAsset: yes
 DefaultImporter:
->>>>>>>> TuretBranch:Assets/Scripts/TuretScripts.meta
   externalObjects: {}
+>>>>>>>> TuretBranch:Assets/Scripts/TuretScripts.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

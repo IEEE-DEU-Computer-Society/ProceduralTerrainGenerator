@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
-guid: 885171742c944004e8901081d4016555
-timeCreated: 1484172856
-licenseType: Pro
+<<<<<<<< HEAD:Assets/Tiles/green.asset.meta
+guid: 1b5abb07c87ad0f42aa47d5fa64e0433
 ========
 guid: f179dc2c168b2e243a41adeac812752e
 >>>>>>>> TuretBranch:Assets/Scenes/turretScene/NavMesh-NavMesh.asset.meta
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

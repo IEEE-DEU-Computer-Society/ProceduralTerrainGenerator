@@ -1,14 +1,7 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scenes/turretScene.unity.meta
-guid: 2ad830653f57e3043b16869c3c780785
+guid: 2cda990e2423bbf4892e6590ba056729
 DefaultImporter:
   externalObjects: {}
-========
-guid: 3b1493b6e1082664fa6125b9d1610116
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 11400000
->>>>>>>> ozgurBranch:Assets/Tiles/brown.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

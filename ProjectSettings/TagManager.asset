@@ -11,6 +11,8 @@ TagManager:
   - Resource2
   - Resource3
   - enemy
+  - enemy
+  - bullet
   layers:
   - Default
   - TransparentFX
