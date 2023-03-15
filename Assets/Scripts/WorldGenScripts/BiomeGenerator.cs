@@ -76,32 +76,35 @@ public class BiomeGenerator : MonoBehaviour
                 {
                     break;
                 }
-                
-                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.up))
+
+                if (!blankList.Contains(currentBiomeList[counter] + Vector2Int.up) && 
+                    !mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.up) && Random.Range(0, 2) == 0)
                 {
                     currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.up);
                     mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.up, biomTile);
                     suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.up);
                 }
-                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.down))
+                if (!blankList.Contains(currentBiomeList[counter] + Vector2Int.down) && 
+                    !mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.down) && Random.Range(0, 2) == 0)
                 {
                     currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.down);
                     mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.down, biomTile);
                     suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.down);
                 }
-                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.right))
+                if (!blankList.Contains(currentBiomeList[counter] + Vector2Int.right) && 
+                    !mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.right) && Random.Range(0, 2) == 0)
                 {
                     currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.right);
                     mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.right, biomTile);
                     suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.right);
                 }
-                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.left))
+                if (!blankList.Contains(currentBiomeList[counter] + Vector2Int.left) && 
+                    !mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.left) && Random.Range(0, 2) == 0)
                 {
                     currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.left);
                     mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.left, biomTile);
                     suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.left);
                 }
-
                 counter++;
             }
             

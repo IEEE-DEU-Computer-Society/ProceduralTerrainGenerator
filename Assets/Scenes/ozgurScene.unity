@@ -711,12 +711,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37e66c538ccdf44468cc8484e611a316, type: 2}
   - {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
   - {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
-  mapWidth: 200
-  mapLength: 200
+  mapWidth: 50
+  mapLength: 50
   seed: 0
-  minBiomeSize: 0
+  minBiomeSize: 100
   maxBiomeSize: 200000
-  spreadChanceDefault: 140
+  spreadChanceDefault: 300
   spreadChanceDecreaseAmount: 0.1
   suitableTileList: []
   currentBiomeList: []
