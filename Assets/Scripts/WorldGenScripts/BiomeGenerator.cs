@@ -23,32 +23,23 @@ public class BiomeGenerator : MonoBehaviour
     public float spreadChanceDefault;
     public float spreadChanceDecreaseAmount;
     
-    [Header("Blank Fill Variables - Don't Touch")]
-    public List<Vector2Int> currentTilesList;
-    public List<Vector2Int> blankList;
-    public Dictionary<Vector2Int, Tile> mapDataList;
-    public Tile encounteredTile;
-    
     [Header("Variables - Don't Touch")]
+    public Dictionary<Vector2Int, Tile> mapDataDictionary;
     public List<Vector2Int> suitableTileList;
-    public Tile biomTile;
+    public List<Vector2Int> currentBiomeList;
     public Vector2Int startingTile;
+    public Tile biomTile;
     public float spreadChance;
-    public List<Vector2Int> toPaintList;
-    public List<Vector2Int> toAddList;
-    
-    private void OnDrawGizmos()
-    {
-        foreach (Vector2Int item in blankList)
-        {
-            Gizmos.DrawWireSphere(new Vector3(item.x + 0.5f,item.y + 0.5f), 0.5f);
-        }
-    }
+    public int counter;
+
+    [Header("Blank Fill Variables - Don't Touch")]
+    public List<Vector2Int> blankList;
+    public Tile encounteredTile;
 
     private void Start()
     {
         //initializing dictionary
-        mapDataList = new Dictionary<Vector2Int, Tile>();
+        mapDataDictionary = new Dictionary<Vector2Int, Tile>();
         //initializing dictionary
         
         //scanning the map
@@ -67,72 +58,62 @@ public class BiomeGenerator : MonoBehaviour
         {
             biomTile = biomeList[Random.Range(0, biomeList.Count)];
             spreadChance = spreadChanceDefault;
+            counter = 0;
+            
             startingTile = suitableTileList[Random.Range(0, suitableTileList.Count)];
-            toPaintList.Add(startingTile);
+            currentBiomeList.Add(startingTile);
+            mapDataDictionary.Add(startingTile, biomTile);
             suitableTileList.Remove(startingTile);
-        
-            while (toPaintList.Count != 0)
-            {
-                foreach (Vector2Int item in toPaintList)
-                {
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), biomTile);
-                    mapDataList.Add(item, biomTile);
-                    currentTilesList.Add(item);
-                
-                    if (Random.Range(0, 101) <= spreadChance)
-                    {
-                        spreadChance -= spreadChanceDecreaseAmount;
-                        if (suitableTileList.Contains(item + Vector2Int.up))
-                        {
-                            toAddList.Add(item + Vector2Int.up);
-                            suitableTileList.Remove(item + Vector2Int.up);
-                        }
-                        if (suitableTileList.Contains(item + Vector2Int.down))
-                        {
-                            toAddList.Add(item + Vector2Int.down);;
-                            suitableTileList.Remove(item + Vector2Int.down);
-                        }
-                        if (suitableTileList.Contains(item + Vector2Int.left))
-                        {
-                            toAddList.Add(item + Vector2Int.left);;
-                            suitableTileList.Remove(item + Vector2Int.left);
-                        }
-                        if (suitableTileList.Contains(item + Vector2Int.right))
-                        {
-                            toAddList.Add(item + Vector2Int.right);;
-                            suitableTileList.Remove(item + Vector2Int.right);
-                        }
-                    }
-                }
-                toPaintList.Clear();
 
-                if (currentTilesList.Count > maxBiomeSize)
+            while (currentBiomeList.Count < maxBiomeSize && counter < currentBiomeList.Count)
+            {
+                if (Random.Range(0, 101) <= spreadChance)
                 {
-                    foreach (Vector2Int item in toAddList)
-                    {
-                        suitableTileList.Add(item);
-                    }
-                    toAddList.Clear();
+                    spreadChance -= spreadChanceDecreaseAmount;
+                }
+
+                else
+                {
                     break;
                 }
-        
-                foreach (Vector2Int item in toAddList)
+                
+                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.up))
                 {
-                    toPaintList.Add(item);
+                    currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.up);
+                    mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.up, biomTile);
+                    suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.up);
                 }
-                toAddList.Clear();
+                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.down))
+                {
+                    currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.down);
+                    mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.down, biomTile);
+                    suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.down);
+                }
+                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.right))
+                {
+                    currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.right);
+                    mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.right, biomTile);
+                    suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.right);
+                }
+                if (!mapDataDictionary.ContainsKey(currentBiomeList[counter] + Vector2Int.left))
+                {
+                    currentBiomeList.Add(currentBiomeList[counter] + Vector2Int.left);
+                    mapDataDictionary.Add(currentBiomeList[counter] + Vector2Int.left, biomTile);
+                    suitableTileList.Remove(currentBiomeList[counter] + Vector2Int.left);
+                }
+
+                counter++;
             }
             
-            if (currentTilesList.Count < minBiomeSize)
+            if (currentBiomeList.Count < minBiomeSize)
             {
-                foreach (Vector2Int item in currentTilesList)
+                foreach (Vector2Int item in currentBiomeList)
                 {
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), null);
-                    mapDataList.Remove(item);
+                    mapDataDictionary.Remove(item);
                     blankList.Add(item);
                 }
             }
-            currentTilesList.Clear();
+            currentBiomeList.Clear();
         }
         //generating biomes
 
@@ -142,28 +123,28 @@ public class BiomeGenerator : MonoBehaviour
             int increase = 1;
             while (true)
             {
-                if (mapDataList.ContainsKey(new Vector2Int(item.x + increase, item.y)))
+                if (mapDataDictionary.ContainsKey(new Vector2Int(item.x + increase, item.y)))
                 {
-                    encounteredTile = mapDataList[new Vector2Int(item.x + increase, item.y)];
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
+                    encounteredTile = mapDataDictionary[new Vector2Int(item.x + increase, item.y)];
+                    mapDataDictionary.Add(item, encounteredTile);
                     break;
                 }
-                if (mapDataList.ContainsKey(new Vector2Int(item.x - increase, item.y)))
+                if (mapDataDictionary.ContainsKey(new Vector2Int(item.x - increase, item.y)))
                 {
-                    encounteredTile = mapDataList[new Vector2Int(item.x - increase, item.y)];
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
+                    encounteredTile = mapDataDictionary[new Vector2Int(item.x - increase, item.y)];
+                    mapDataDictionary.Add(item, encounteredTile);
                     break;
                 }
-                if (mapDataList.ContainsKey(new Vector2Int(item.x, item.y + increase)))
+                if (mapDataDictionary.ContainsKey(new Vector2Int(item.x, item.y + increase)))
                 {
-                    encounteredTile = mapDataList[new Vector2Int(item.x, item.y + increase)];
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
+                    encounteredTile = mapDataDictionary[new Vector2Int(item.x, item.y + increase)];
+                    mapDataDictionary.Add(item, encounteredTile);
                     break;
                 }
-                if (mapDataList.ContainsKey(new Vector2Int(item.x, item.y - increase)))
+                if (mapDataDictionary.ContainsKey(new Vector2Int(item.x, item.y - increase)))
                 {
-                    encounteredTile = mapDataList[new Vector2Int(item.x, item.y - increase)];
-                    tilemap.SetTile(new Vector3Int(item.x, item.y), encounteredTile);
+                    encounteredTile = mapDataDictionary[new Vector2Int(item.x, item.y - increase)];
+                    mapDataDictionary.Add(item, encounteredTile);
                     break;
                 }
                 increase++;
@@ -171,5 +152,12 @@ public class BiomeGenerator : MonoBehaviour
         }
         blankList.Clear();
         //filling the blanks
+        
+        //generating textures
+        foreach (var item in mapDataDictionary)
+        {
+            tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), item.Value);
+        }
+        //generating textures
     }
 }

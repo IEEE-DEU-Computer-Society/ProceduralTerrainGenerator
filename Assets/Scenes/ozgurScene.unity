@@ -702,28 +702,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1006441457}
   biomeList:
-  - {fileID: 11400000, guid: b200ab406bcb0c9409913c6ea96d6461, type: 2}
-  - {fileID: 11400000, guid: 83afd402ed90deb41b8c4d5a4a66eae9, type: 2}
-  - {fileID: 11400000, guid: 3b1493b6e1082664fa6125b9d1610116, type: 2}
-  - {fileID: 11400000, guid: c1ee657e605b7c14d9a38b5a5aabb034, type: 2}
+  - {fileID: 11400000, guid: 5a699710607e5b4438c344e82d606e60, type: 2}
+  - {fileID: 11400000, guid: 9fb33e32a45428a4da804f10a408dd63, type: 2}
+  - {fileID: 11400000, guid: 29bb640f6c7ef224e98e149776498f1f, type: 2}
+  - {fileID: 11400000, guid: 311fb8820b52622408cda65127d98436, type: 2}
   - {fileID: 11400000, guid: 1b5abb07c87ad0f42aa47d5fa64e0433, type: 2}
   - {fileID: 11400000, guid: 45fcb62d29a5dd743acdaa4c7135d589, type: 2}
   - {fileID: 11400000, guid: 37e66c538ccdf44468cc8484e611a316, type: 2}
   - {fileID: 11400000, guid: 084032c188da0e94aaabcb8cff282e57, type: 2}
   - {fileID: 11400000, guid: e4c5bb4fae05fa3488230d4e8650cd1b, type: 2}
-  mapWidth: 50
-  mapLength: 50
+  mapWidth: 200
+  mapLength: 200
   seed: 0
-  minBiomeSize: 30
-  maxBiomeSize: 20000
-  spreadChanceDefault: 100
-  spreadChanceDecreaseAmount: 0.2
-  currentTilesList: []
+  minBiomeSize: 0
+  maxBiomeSize: 200000
+  spreadChanceDefault: 140
+  spreadChanceDecreaseAmount: 0.1
+  suitableTileList: []
+  currentBiomeList: []
+  startingTile: {x: 0, y: 0}
+  biomTile: {fileID: 0}
+  spreadChance: 0
+  counter: 0
   blankList: []
   encounteredTile: {fileID: 0}
-  suitableTileList: []
-  biomTile: {fileID: 0}
-  startingTile: {x: 0, y: 0}
-  spreadChance: 0
-  toPaintList: []
-  toAddList: []
