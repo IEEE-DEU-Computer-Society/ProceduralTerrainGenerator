@@ -20,7 +20,7 @@ public class MissleScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 direction = (Vector2)enemy.position - rgb.position;
+        Vector2 direction = (Vector2)enemy.position - -rgb.position;
         
         direction.Normalize();
 
