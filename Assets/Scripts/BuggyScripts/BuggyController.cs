@@ -2,10 +2,11 @@ using System;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
-public class PlayerController : MonoBehaviour
+public class BuggyController : MonoBehaviour
 {
+
     //assign
-    public Rigidbody2D rb;
+    public Rigidbody2D rbbuggy;
 
     //movement variables
     public Vector2 moveInput;
@@ -14,6 +15,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        rb.velocity = moveInput * speed;
+        rbbuggy.velocity = moveInput * speed;
     }
 }
