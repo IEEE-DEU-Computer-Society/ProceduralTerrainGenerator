@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-[ExecuteInEditMode] //UPDATE FOR EDIT / START FOR PLAY
+[ExecuteInEditMode]
 public class PerlinTerrainGenerator : MonoBehaviour
 {
     [Header("Assign - Textures")]
@@ -30,7 +30,7 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public int octaveNumber;
     
     [Header("Assign - Multipliers")]
-    public Vector2 manualOffset;
+    public Vector2Int manualOffset;
     public float noiseScale;
     public float lacunarity;
     [Range(0f, 1f)] public float persistence;
@@ -47,19 +47,17 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public float frequency;
     public float amplitude;
 
-    private void Update() //UPDATE FOR EDIT / START FOR PLAY
-    { 
-        //reset
+    private void Update()
+    {
         tilemap.ClearAllTiles();
-        //reset
         
         //generating offsets
         Random.InitState(seed);
         octaveOffsets = new Vector2[octaveNumber];
         for (int i = 0; i < octaveNumber; i++)
         {
-            xOffset = Random.Range(-100000f, 100000f) + manualOffset.x;
-            yOffset = Random.Range(-100000f, 100000f) + manualOffset.y;
+            xOffset = Random.Range(-100000f, 100000f);
+            yOffset = Random.Range(-100000f, 100000f);
             octaveOffsets[i] = new Vector2(xOffset, yOffset);
         }
         //generating offsets
@@ -76,8 +74,8 @@ public class PerlinTerrainGenerator : MonoBehaviour
                     
                 for (int i = 0; i < octaveNumber; i++)
                 {
-                    float xValue = x / noiseScale * frequency + octaveOffsets[i].x;
-                    float yValue = y / noiseScale * frequency + octaveOffsets[i].y;
+                    float xValue = (x + manualOffset.x) / noiseScale * frequency + octaveOffsets[i].x;
+                    float yValue = (y + manualOffset.y) / noiseScale * frequency + octaveOffsets[i].y;
 
                     if (alternateAlgorithm)
                     {
