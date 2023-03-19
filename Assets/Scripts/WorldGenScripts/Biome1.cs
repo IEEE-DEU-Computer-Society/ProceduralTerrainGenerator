@@ -23,8 +23,9 @@ public class Biome1 : MonoBehaviour
     public float spreadChanceDefault;
     public float spreadChanceDecreaseAmount;
     
-    [Header("Variables - Don't Touch")]
     public Dictionary<Vector2Int, Tile> mapDataDictionary;
+    
+    [Header("Variables - Don't Touch")]
     public List<Vector2Int> suitableTileList;
     public List<Vector2Int> currentBiomeList;
     public Vector2Int startingTile;
