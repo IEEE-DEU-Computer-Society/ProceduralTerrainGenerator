@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 public class PerlinBiomeGenerator : MonoBehaviour
 {
     public bool one;
@@ -64,9 +64,11 @@ public class PerlinBiomeGenerator : MonoBehaviour
     public Dictionary<Vector2Int, float> firstNoiseMap;
     public Dictionary<Vector2Int, float> secondNoiseMap;
     
-    private void Update()
+    private void Start()
     {
+        //reset
         tilemap.ClearAllTiles();
+        //reset
         
         //initializing dictionaries
         firstNoiseMap = new Dictionary<Vector2Int, float>();
@@ -129,82 +131,85 @@ public class PerlinBiomeGenerator : MonoBehaviour
         //second noise map
 
         //generating textures
-        foreach (var item in firstNoiseMap)
+        for (int x = 0; x < chunkSize.x; x++)
         {
-            if (one)
+            for (int y = 0; y < chunkSize.y; y++)
             {
-                if (item.Value >= 0 && item.Value <= limitOne1)
+                if (one)
                 {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture1);
+                    if (firstNoiseMap[new Vector2Int(x, y)]  >= 0 && firstNoiseMap[new Vector2Int(x, y)]  <= limitOne1)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture1);
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)]  > limitOne1 && firstNoiseMap[new Vector2Int(x, y)]  <= limitOne2)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture2);
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)]  > limitOne2 && firstNoiseMap[new Vector2Int(x, y)]  <= limitOne3)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture3);
+                    }
                 }
-                else if (item.Value > limitOne1 && item.Value <= limitOne2)
-                {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture2);
-                }
-                else if (item.Value > limitOne2 && item.Value <= limitOne3)
-                {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
-                }
-            }
             
-            else if (two)
-            {
-                if (secondNoiseMap[item.Key] >= 0 && secondNoiseMap[item.Key] <= limitTwo1)
+                else if (two)
                 {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture1);
+                    if (secondNoiseMap[new Vector2Int(x, y)] >= 0 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture1);
+                    }
+                    else if (secondNoiseMap[new Vector2Int(x, y)] > limitTwo1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture2);
+                    }
+                    else if (secondNoiseMap[new Vector2Int(x, y)] > limitTwo2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y), texture3);
+                    }
                 }
-                else if (secondNoiseMap[item.Key] > limitTwo1 && secondNoiseMap[item.Key] <= limitTwo2)
-                {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture2);
-                }
-                else if (secondNoiseMap[item.Key] > limitTwo2 && secondNoiseMap[item.Key] <= limitTwo3)
-                {
-                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
-                }
-            }
 
-            else
-            {
-                if (item.Value <= limitOne1 && secondNoiseMap[item.Key] <= limitTwo1)
+                else
                 {
-                    selectedTile = texture4;
-                }
-                else if (item.Value <= limitOne1 && secondNoiseMap[item.Key] <= limitTwo2)
-                {
-                    selectedTile = texture5;
-                }
-                else if (item.Value <= limitOne1 && secondNoiseMap[item.Key] <= limitTwo3)
-                {
-                    selectedTile = texture6;
-                }
-                //
-                else if (item.Value <= limitOne2 && secondNoiseMap[item.Key] <= limitTwo1)
-                {
-                    selectedTile = texture7;
-                }
-                else if (item.Value <= limitOne2 && secondNoiseMap[item.Key] <= limitTwo2)
-                {
-                    selectedTile = texture8;
-                }
-                else if (item.Value <= limitOne2 && secondNoiseMap[item.Key] <= limitTwo3)
-                {
-                    selectedTile = texture9;
-                }
-                //
-                else if (item.Value <= limitOne3 && secondNoiseMap[item.Key] <= limitTwo1)
-                {
-                    selectedTile = texture10;
-                }
-                else if (item.Value <= limitOne3 && secondNoiseMap[item.Key] <= limitTwo2)
-                {
-                    selectedTile = texture11;
-                }
-                else if (item.Value <= limitOne3 && secondNoiseMap[item.Key] <= limitTwo3)
-                {
-                    selectedTile = texture12;
-                }
+                    if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
+                    {
+                        selectedTile = texture4;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
+                    {
+                        selectedTile = texture5;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
+                    {
+                        selectedTile = texture6;
+                    }
+                    //
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
+                    {
+                        selectedTile = texture7;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
+                    {
+                        selectedTile = texture8;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
+                    {
+                        selectedTile = texture9;
+                    }
+                    //
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
+                    {
+                        selectedTile = texture10;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
+                    {
+                        selectedTile = texture11;
+                    }
+                    else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
+                    {
+                        selectedTile = texture12;
+                    }
                 
-                tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), selectedTile);
+                    tilemap.SetTile(new Vector3Int(x, y), selectedTile);
+                }
             }
         }
         //generating textures
