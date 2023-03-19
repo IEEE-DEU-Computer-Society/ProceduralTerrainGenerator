@@ -6,30 +6,31 @@ using Random = UnityEngine.Random;
 [ExecuteAlways]
 public class PerlinTerrainGenerator : MonoBehaviour
 {
-    [Header("Assign - Textures 1-2")]
+    [Header("Assign - Biome Info")]
+    public PerlinBiomeGenerator biomeGenerator;
+    
+    [Header("Assign - Textures")]
     public Tilemap tilemap;
     public Tile texture1;
     public Tile texture2;
     public Tile texture3;
     public Tile texture4;
+    public Tile texture5;
+    public Tile texture6;
     
-    [Header("Assign - Texture Ranges 1")]
+    [Header("Assign - Texture Ranges")]
     [Range(0f, 1f)] public float limit1;
     [Range(0f, 1f)] public float limit2;
     [Range(0f, 1f)] public float limit3;
-    [Range(0f, 1f)] public float limit4;
-    
-    
-    [Header("Assign - Common")]
+
+    [Header("Assign - Noise Map")]
     public Vector2Int chunkSize;
     public int seed;
     public int octaveNumber = 3;
-    
-    [Header("Assign - First Noise Map")]
+    public float noiseScale;
     public Vector2Int manualOffset;
     public float lacunarity;
     [Range(0f, 1f)] public float persistence;
-    public float noiseScale;
 
     [Header("Don't Touch - Variables")]
     public Vector2 offset;
@@ -37,20 +38,23 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public float amplitude;
     public float noise;
     public float perlinValue;
-    public Tile selectedTile;
     
     // NOISE MAPS - Inspector doesn't support dictionaries
     public Dictionary<Vector2Int, float> terrainNoiseMap;
-    
+    public Dictionary<Vector2Int, int> terrainData;
+    public Dictionary<Vector2Int, int> biomeData;
+
     private void Update()
     {
         //reset
         tilemap.ClearAllTiles();
         //reset
         
-        //initializing dictionary
+        //initializing dictionaries
         terrainNoiseMap = new Dictionary<Vector2Int, float>();
-        //initializing dictionary
+        terrainData = new Dictionary<Vector2Int, int>();
+        biomeData = biomeGenerator.biomeData;
+        //initializing dictionaries
         
         //generating offsets
         Random.InitState(seed);
@@ -85,21 +89,42 @@ public class PerlinTerrainGenerator : MonoBehaviour
         //generating textures
         foreach (var item in terrainNoiseMap)
         {
-            if (item.Value >= 0 && item.Value <= limit1)
+            if (biomeData[item.Key] == 0)
             {
-                tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture1);
+                if (item.Value >= 0 && item.Value <= limit1)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 0);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture1);
+                }
+                else if (item.Value > limit1 && item.Value <= limit2)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 1);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture2);
+                }
+                else if (item.Value > limit2 && item.Value <= limit3)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
+                }
             }
-            else if (item.Value > limit1 && item.Value <= limit2)
+
+            else
             {
-                tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture2);
-            }
-            else if (item.Value > limit2 && item.Value <= limit3)
-            {
-                tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
-            }
-            else if (item.Value > limit3 && item.Value <= limit4)
-            {
-                tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture4);
+                if (item.Value >= 0 && item.Value <= limit1)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 0);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture4);
+                }
+                else if (item.Value > limit1 && item.Value <= limit2)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 1);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture5);
+                }
+                else if (item.Value > limit2 && item.Value <= limit3)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture6);
+                }
             }
         }
         //generating textures

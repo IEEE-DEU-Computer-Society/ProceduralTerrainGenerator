@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-//[ExecuteAlways]
+[ExecuteAlways]
 public class PerlinBiomeGenerator : MonoBehaviour
 {
     public bool one;
@@ -63,8 +63,9 @@ public class PerlinBiomeGenerator : MonoBehaviour
     // NOISE MAPS - Inspector doesn't support dictionaries
     public Dictionary<Vector2Int, float> firstNoiseMap;
     public Dictionary<Vector2Int, float> secondNoiseMap;
-    
-    private void Start()
+    public Dictionary<Vector2Int, int> biomeData;
+
+    private void Update()
     {
         //reset
         tilemap.ClearAllTiles();
@@ -73,6 +74,7 @@ public class PerlinBiomeGenerator : MonoBehaviour
         //initializing dictionaries
         firstNoiseMap = new Dictionary<Vector2Int, float>();
         secondNoiseMap = new Dictionary<Vector2Int, float>();
+        biomeData = new Dictionary<Vector2Int, int>();
         //initializing dictionaries
         
         //generating offsets
@@ -172,40 +174,49 @@ public class PerlinBiomeGenerator : MonoBehaviour
                     if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
                     {
                         selectedTile = texture4;
+                        biomeData.Add(new Vector2Int(x, y), 0);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
                     {
                         selectedTile = texture5;
+                        biomeData.Add(new Vector2Int(x, y), 0);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne1 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
                     {
                         selectedTile = texture6;
+                        biomeData.Add(new Vector2Int(x, y), 2);
                     }
                     //
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
                     {
                         selectedTile = texture7;
+                        biomeData.Add(new Vector2Int(x, y), 3);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
                     {
                         selectedTile = texture8;
+                        biomeData.Add(new Vector2Int(x, y), 4);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne2 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
                     {
                         selectedTile = texture9;
+                        biomeData.Add(new Vector2Int(x, y), 5);
                     }
                     //
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo1)
                     {
                         selectedTile = texture10;
+                        biomeData.Add(new Vector2Int(x, y), 6);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo2)
                     {
                         selectedTile = texture11;
+                        biomeData.Add(new Vector2Int(x, y), 7);
                     }
                     else if (firstNoiseMap[new Vector2Int(x, y)] <= limitOne3 && secondNoiseMap[new Vector2Int(x, y)] <= limitTwo3)
                     {
                         selectedTile = texture12;
+                        biomeData.Add(new Vector2Int(x, y), 8);
                     }
                 
                     tilemap.SetTile(new Vector3Int(x, y), selectedTile);
