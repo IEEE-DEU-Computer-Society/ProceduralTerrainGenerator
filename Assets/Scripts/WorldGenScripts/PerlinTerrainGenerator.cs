@@ -1,167 +1,129 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-[ExecuteInEditMode] //UPDATE FOR EDIT / START FOR PLAY
+[ExecuteAlways]
 public class PerlinTerrainGenerator : MonoBehaviour
 {
+    [Header("Assign - Biome Info")]
+    public PerlinBiomeGenerator biomeGenerator;
+    
     [Header("Assign - Textures")]
     public Tilemap tilemap;
-    public Tile layerOne;
-    public Tile layerTwo;
-    public Tile layerThree;
-    public Tile layerFour;
-    public Tile layerFive;
-
+    public Tile texture1;
+    public Tile texture2;
+    public Tile texture3;
+    public Tile texture4;
+    public Tile texture5;
+    public Tile texture6;
+    
     [Header("Assign - Texture Ranges")]
-    [Range(0f, 1f)] public float layerOneLimit;
-    [Range(0f, 1f)] public float layerTwoLimit;
-    [Range(0f, 1f)] public float layerThreeLimit;
-    [Range(0f, 1f)] public float layerFourLimit;
-    [Range(0f, 1f)] public float layerFiveLimit;
+    [Range(0f, 1f)] public float limit1;
+    [Range(0f, 1f)] public float limit2;
+    [Range(0f, 1f)] public float limit3;
 
-    [Header("Alternate Algorithm")]
-    public bool alternateAlgorithm;
-    
-    [Header("Assign - Information")]
-    public int mapWidth;
-    public int mapLength;
+    [Header("Assign - Noise Map")]
+    public Vector2Int chunkSize;
     public int seed;
-    public int octaveNumber;
-    
-    [Header("Assign - Multipliers")]
-    public Vector2 manualOffset;
+    public int octaveNumber = 3;
     public float noiseScale;
+    public Vector2Int manualOffset;
     public float lacunarity;
     [Range(0f, 1f)] public float persistence;
 
-    [Header("Variables - Don't Touch")]
-    public float noise;
-    public float[,] noiseMap;
-    public float perlinValue;
-    public float minNoise;
-    public float maxNoise;
-    public Vector2[] octaveOffsets;
-    public float xOffset;
-    public float yOffset;
+    [Header("Don't Touch - Variables")]
+    public Vector2 offset;
     public float frequency;
     public float amplitude;
+    public float noise;
+    public float perlinValue;
+    
+    // NOISE MAPS - Inspector doesn't support dictionaries
+    public Dictionary<Vector2Int, float> terrainNoiseMap;
+    public Dictionary<Vector2Int, int> terrainData;
+    public Dictionary<Vector2Int, int> biomeData;
 
-    private void Update() //UPDATE FOR EDIT / START FOR PLAY
-    { 
+    private void Update()
+    {
         //reset
         tilemap.ClearAllTiles();
         //reset
         
+        //initializing dictionaries
+        terrainNoiseMap = new Dictionary<Vector2Int, float>();
+        terrainData = new Dictionary<Vector2Int, int>();
+        biomeData = biomeGenerator.biomeData;
+        //initializing dictionaries
+        
         //generating offsets
         Random.InitState(seed);
-        octaveOffsets = new Vector2[octaveNumber];
-        for (int i = 0; i < octaveNumber; i++)
-        {
-            xOffset = Random.Range(-100000f, 100000f) + manualOffset.x;
-            yOffset = Random.Range(-100000f, 100000f) + manualOffset.y;
-            octaveOffsets[i] = new Vector2(xOffset, yOffset);
-        }
+        offset = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
         //generating offsets
-            
+
         //generating noise map
-        noiseMap = new float[mapWidth,mapLength];
-        for (int x = 0; x < mapWidth; x++)
+        for (int x = 0; x < chunkSize.x; x++)
         {
-            for (int y = 0; y < mapLength; y++)
+            for (int y = 0; y < chunkSize.y; y++)
             {
                 frequency = 1;
                 amplitude = 1;
                 noise = 0;
-                    
+
                 for (int i = 0; i < octaveNumber; i++)
                 {
-                    float xValue = x / noiseScale * frequency + octaveOffsets[i].x;
-                    float yValue = y / noiseScale * frequency + octaveOffsets[i].y;
+                    float xValue = (x + manualOffset.x) / noiseScale * frequency + offset.x;
+                    float yValue = (y + manualOffset.y) / noiseScale * frequency + offset.y;
 
-                    if (alternateAlgorithm)
-                    {
-                        perlinValue = Mathf.PerlinNoise(xValue, yValue) * 2 - 1;
-                    }
-
-                    else
-                    {
-                        perlinValue = Mathf.PerlinNoise(xValue, yValue);
-                    }
-                    
+                    perlinValue = Mathf.PerlinNoise(xValue, yValue);
                     noise += perlinValue * amplitude;
-
+                    
                     amplitude *= persistence;
                     frequency *= lacunarity;
                 }
-
-                if (alternateAlgorithm)
-                {
-                    if (x == 0 && y == 0)
-                    {
-                        minNoise = noise;
-                        maxNoise = noise;
-                    }
-
-                    else
-                    {
-                        if (noise < minNoise)
-                        {
-                            minNoise = noise;
-                        }
-                        
-                        else if (noise > maxNoise)
-                        {
-                            maxNoise = noise;
-                        }
-                    }
-                    noiseMap[x, y] = noise;
-                }
-
-                else
-                {
-                    noiseMap[x, y] = Mathf.Clamp(noise, 0f, 1f);
-                }
-            }
-        }
-
-        if (alternateAlgorithm)
-        {
-            for (int x = 0; x < mapWidth; x++)
-            {
-                for (int y = 0; y < mapLength; y++)
-                {
-                    noiseMap[x, y] = Mathf.InverseLerp(minNoise, maxNoise, noiseMap[x, y]);
-                }
+                terrainNoiseMap.Add(new Vector2Int(x, y), Mathf.Clamp(noise, 0f, 1f));
             }
         }
         //generating noise map
-            
+        
         //generating textures
-        for (int x = 0; x < mapWidth; x++)
+        foreach (var item in terrainNoiseMap)
         {
-            for (int y = 0; y < mapLength; y++)
+            if (biomeData[item.Key] == 0)
             {
-                if (noiseMap[x,y] > 0 && noiseMap[x,y] <= layerOneLimit)
+                if (item.Value >= 0 && item.Value <= limit1)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), layerOne);
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 0);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture1);
                 }
-                else if (noiseMap[x,y] > layerOneLimit && noiseMap[x,y] <= layerTwoLimit)
+                else if (item.Value > limit1 && item.Value <= limit2)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), layerTwo);
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 1);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture2);
                 }
-                
-                else if (noiseMap[x,y] > layerTwoLimit && noiseMap[x,y] <= layerThreeLimit)
+                else if (item.Value > limit2 && item.Value <= limit3)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), layerThree);
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
                 }
-                else if (noiseMap[x,y] > layerThreeLimit && noiseMap[x,y] <= layerFourLimit)
+            }
+
+            else
+            {
+                if (item.Value >= 0 && item.Value <= limit1)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), layerFour);
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 0);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture4);
                 }
-                else if (noiseMap[x,y] > layerFourLimit && noiseMap[x,y] <= layerFiveLimit)
+                else if (item.Value > limit1 && item.Value <= limit2)
                 {
-                    tilemap.SetTile(new Vector3Int(x,y,0), layerFive);
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 1);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture5);
+                }
+                else if (item.Value > limit2 && item.Value <= limit3)
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture6);
                 }
             }
         }
