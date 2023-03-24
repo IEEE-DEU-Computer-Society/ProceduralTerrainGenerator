@@ -5,16 +5,6 @@ using Random = UnityEngine.Random;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    /* WHAT THIS SCRIPT DO
-     * creates square chunks in a designated area
-     * number and size of the chunks are configurable
-     * prevents overlapping, distance is configurable
-     * 
-     * creates resources in chunks
-     * prevents overlapping, distance is configurable
-     * number of resources in a chunk are configurable
-     */
-    
     /* NOTES AND WARNINGS
      * chunkRange means distance from chunk center. 2 tiles from the center means 4x4 sized chunk
      * chunkDistance/resourceDistance is minimum distance between chunk centers, must include chunkRange
