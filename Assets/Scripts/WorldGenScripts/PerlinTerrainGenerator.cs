@@ -17,11 +17,15 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public Tile texture4;
     public Tile texture5;
     public Tile texture6;
+    public Tile texture7; //forest
+    public Tile texture8; //forest
     
     [Header("Assign - Texture Ranges")]
     [Range(0f, 1f)] public float limit1;
     [Range(0f, 1f)] public float limit2;
     [Range(0f, 1f)] public float limit3;
+    [Range(0f, 1f)] public float limit4; //defines limit5
+    [Range(0f, 1f)] public float limit5;
 
     [Header("Assign - Noise Map")]
     public Vector2Int chunkSize;
@@ -106,6 +110,11 @@ public class PerlinTerrainGenerator : MonoBehaviour
                     terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
                     tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture3);
                 }
+                else if (item.Value > limit4 && item.Value <= limit5) //forest
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 3);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture7);
+                }
             }
 
             else
@@ -124,6 +133,11 @@ public class PerlinTerrainGenerator : MonoBehaviour
                 {
                     terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 2);
                     tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture6);
+                }
+                else if (item.Value > limit4 && item.Value <= limit5) //forest
+                {
+                    terrainData.Add(new Vector2Int(item.Key.x, item.Key.y), 3);
+                    tilemap.SetTile(new Vector3Int(item.Key.x, item.Key.y), texture8);
                 }
             }
         }
