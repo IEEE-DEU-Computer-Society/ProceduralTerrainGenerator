@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -65,27 +66,26 @@ public class PerlinBiomeGenerator : MonoBehaviour
     public Dictionary<Vector2Int, float> secondNoiseMap;
     public Dictionary<Vector2Int, int> biomeData;
 
-    private void Update()
+    private void Start()
     {
-        //reset
-        tilemap.ClearAllTiles();
-        //reset
-        
         //initializing dictionaries
         firstNoiseMap = new Dictionary<Vector2Int, float>();
         secondNoiseMap = new Dictionary<Vector2Int, float>();
         biomeData = new Dictionary<Vector2Int, int>();
         //initializing dictionaries
-        
+    }
+
+    public void GenerateBiome(Vector2Int leftBottom)
+    {
         //generating offsets
         Random.InitState(seed);
         offset = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
         //generating offsets
 
         //first noise map
-        for (int x = 0; x < chunkSize.x; x++)
+        for (int x = leftBottom.x; x < chunkSize.x + leftBottom.x; x++)
         {
-            for (int y = 0; y < chunkSize.y; y++)
+            for (int y = leftBottom.y; y < chunkSize.y + leftBottom.y; y++)
             {
                 frequency = 1;
                 amplitude = 1;
@@ -108,9 +108,9 @@ public class PerlinBiomeGenerator : MonoBehaviour
         //first noise map
         
         //second noise map
-        for (int x = 0; x < chunkSize.x; x++)
+        for (int x = leftBottom.x; x < leftBottom.x + chunkSize.x; x++)
         {
-            for (int y = 0; y < chunkSize.y; y++)
+            for (int y = 0; leftBottom.y < leftBottom.y + chunkSize.y; y++)
             {
                 frequency = 1;
                 amplitude = 1;
