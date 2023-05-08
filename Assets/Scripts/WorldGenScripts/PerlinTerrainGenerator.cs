@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -48,27 +49,27 @@ public class PerlinTerrainGenerator : MonoBehaviour
     public Dictionary<Vector2Int, int> terrainData;
     public Dictionary<Vector2Int, int> biomeData;
 
-    private void Update()
+    private void Start()
     {
-        //reset
-        tilemap.ClearAllTiles();
-        //reset
-        
         //initializing dictionaries
         terrainNoiseMap = new Dictionary<Vector2Int, float>();
         terrainData = new Dictionary<Vector2Int, int>();
         biomeData = biomeGenerator.biomeData;
         //initializing dictionaries
-        
+
+    }
+
+    public void GenerateTerrain(Vector2Int leftBottom)
+    {
         //generating offsets
         Random.InitState(seed);
         offset = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
         //generating offsets
 
         //generating noise map
-        for (int x = 0; x < chunkSize.x; x++)
+        for (int x = leftBottom.x; x < leftBottom.x + chunkSize.x; x++)
         {
-            for (int y = 0; y < chunkSize.y; y++)
+            for (int y = 0; leftBottom.y < leftBottom.y + chunkSize.y; y++)
             {
                 frequency = 1;
                 amplitude = 1;
