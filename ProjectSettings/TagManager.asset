@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Core
-  - Enemy
-  - Resource
-  - Resource1
-  - Resource2
-  - Resource3
-  - enemy
-  - enemy
-  - bullet
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -49,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 3978711211
     locked: 0

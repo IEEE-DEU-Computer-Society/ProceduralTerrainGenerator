@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChunkController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinBiomeGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinBiomeGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinFloraGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinFloraGenerator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinResourceGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinResourceGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinTerrainGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinTerrainGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/black.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/black.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/blue.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/brown.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/brown.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/gray.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/gray.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/pink.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/pink.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/purple.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/purple.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/red.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/white.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/white.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScripts/EnemySight.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/BulletDestScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/FireRotationScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/MissleScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TuretScripts/ZoneScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WorldGenScripts/ResourceGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/f5/3f014d03/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,23 +70,37 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys_rider&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\ege07\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\ege07\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\ege07\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\ozgur\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\ozgur\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\ozgur\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.20f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\ACER\Desktop\GameDev\DefenseGame -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\ACER\Desktop\GameDev\DefenseGame" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\GameDev\DefenseGame -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\GameDev\DefenseGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -135,6 +174,9 @@
       <workItem from="1679146545817" duration="1182000" />
       <workItem from="1679147755021" duration="3008000" />
       <workItem from="1679167475990" duration="3072000" />
+      <workItem from="1690553860627" duration="898000" />
+      <workItem from="1691542143873" duration="4814000" />
+      <workItem from="1691551122616" duration="5703000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>
