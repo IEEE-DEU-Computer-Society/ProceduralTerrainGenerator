@@ -5,56 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovementManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovementManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -200,7 +156,7 @@
       <workItem from="1679167475990" duration="3072000" />
       <workItem from="1690553860627" duration="898000" />
       <workItem from="1691542143873" duration="4814000" />
-      <workItem from="1691551122616" duration="9510000" />
+      <workItem from="1691551122616" duration="13760000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>

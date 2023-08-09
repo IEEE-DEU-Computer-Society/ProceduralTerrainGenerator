@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -14,7 +13,6 @@ public class TerrainGenerator : PerlinGeneratorBase
     [SerializeField] private List<float> terrainTileRangeList;
 
     [Header("Assign - Noise Map")]
-    public int seed;
     public int octaveNumber = 3;
     public float noiseScale;
     public Vector2Int offset;
@@ -22,22 +20,26 @@ public class TerrainGenerator : PerlinGeneratorBase
     [Range(0f, 1f)] public float persistence;
 
     private Dictionary<Vector2Int, float> terrainNoiseMap;
+    private Vector2 randomize;
 
     private void Awake()
     {
         Singleton = GetComponent<TerrainGenerator>();
-        Random.InitState(seed);
+        ChangeSeed(0);
+        
         MovementManager.OnMovement += GenerateTerrain;
-    }
-
-    private void Update()
-    {
-        GenerateTerrain();
+        UIManager.OnUIChange += GenerateTerrain;
     }
 
     private void GenerateTerrain()
     {
-        terrainNoiseMap = GenerateNoiseMap(offset, octaveNumber, noiseScale, persistence, lacunarity);
+        terrainNoiseMap = GenerateNoiseMap(offset, randomize,octaveNumber, noiseScale, persistence, lacunarity);
         GenerateTiles(terrainTilemap, terrainNoiseMap, terrainTileList, terrainTileRangeList);
+    }
+
+    public void ChangeSeed(int newSeed)
+    {
+        Random.InitState(newSeed);
+        randomize = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
     }
 }

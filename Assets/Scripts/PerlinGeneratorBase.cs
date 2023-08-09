@@ -4,10 +4,10 @@ using UnityEngine.Tilemaps;
 
 public class PerlinGeneratorBase : MonoBehaviour
 {
-    protected Dictionary<Vector2Int, float> GenerateNoiseMap(Vector2Int offset, float octaveNumber, float noiseScale, float persistence, float lacunarity)
+    protected Dictionary<Vector2Int, float> GenerateNoiseMap(Vector2Int offset, Vector2 randomize, float octaveNumber, float noiseScale, float persistence, float lacunarity)
     {
         Dictionary<Vector2Int, float> noiseMap = new Dictionary<Vector2Int, float>();
-        
+
         for (int x = 0; x <= 100; x++)
         {
             for (int y = 0; y < 100; y++)
@@ -18,8 +18,8 @@ public class PerlinGeneratorBase : MonoBehaviour
 
                 for (int i = 0; i < octaveNumber; i++)
                 {
-                    float xValue = (x + offset.x) / noiseScale * frequency;
-                    float yValue = (y + offset.y) / noiseScale * frequency;
+                    float xValue = (x + offset.x) / noiseScale * frequency + randomize.x;
+                    float yValue = (y + offset.y) / noiseScale * frequency + randomize.y;
 
                     float perlinValue = Mathf.PerlinNoise(xValue, yValue);
                     noise += perlinValue * amplitude;
