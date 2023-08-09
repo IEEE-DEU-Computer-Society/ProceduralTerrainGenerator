@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ozgurScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/Masaüstü/ProceduralTerrainGenerator\DefenseGame.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\ozgur\OneDrive\Masaüstü\ProceduralTerrainGenerator" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\ACER\Desktop\GameDev\DefenseGame -debugCodeOptimization" />
@@ -156,7 +165,7 @@
       <workItem from="1679167475990" duration="3072000" />
       <workItem from="1690553860627" duration="898000" />
       <workItem from="1691542143873" duration="4814000" />
-      <workItem from="1691551122616" duration="13760000" />
+      <workItem from="1691551122616" duration="14557000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>
