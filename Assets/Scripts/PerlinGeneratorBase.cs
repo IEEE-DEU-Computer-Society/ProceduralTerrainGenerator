@@ -4,7 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class PerlinGeneratorBase : MonoBehaviour
 {
-    protected Dictionary<Vector2Int, float> GenerateNoiseMap(Vector2Int offset, Vector2 randomize, float octaveNumber, float noiseScale, float persistence, float lacunarity)
+    private static Vector2 randomize;
+    
+    protected Dictionary<Vector2Int, float> GenerateNoiseMap(Vector2Int offset, float octaveNumber, float noiseScale, float persistence, float lacunarity)
     {
         Dictionary<Vector2Int, float> noiseMap = new Dictionary<Vector2Int, float>();
 
@@ -60,5 +62,11 @@ public class PerlinGeneratorBase : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public static void ChangeSeed(int newSeed)
+    {
+        Random.InitState(newSeed);
+        randomize = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
     }
 }

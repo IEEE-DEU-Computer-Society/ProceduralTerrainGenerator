@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scenes/yagizScene/NavMesh-NavMesh.asset.meta
 guid: 9fb33e32a45428a4da804f10a408dd63
-========
-guid: 83afd402ed90deb41b8c4d5a4a66eae9
->>>>>>>> ozgurBranch:Assets/Tiles/blue.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -5,7 +5,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d058c49e-63e1-4eb3-a4ea-16381ca48402" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BlueDark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BlueDark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BlueLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BlueLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BrownDark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BrownDark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BrownLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/BrownLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GrayDark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GrayDark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GrayLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GrayLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GreenDark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GreenDark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GreenLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/GreenLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/Palettes/TilePalette.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/Palettes/TilePalette.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/YellowDark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/YellowDark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/YellowLight.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/YellowLight.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueDark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueLight 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueLight 1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BlueLight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BrownDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BrownDark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BrownLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/BrownLight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GrayDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GrayDark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GrayLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GrayLight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GreenDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GreenDark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GreenLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/GreenLight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/YellowDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/YellowDark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/YellowLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/YellowLight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/black.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/blue.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/brown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/brown.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/gray.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/green.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/white.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/sprites/yellow.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DefenseGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chunk.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Chunk.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resource3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainScreenManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainScreenManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Palettes/ozgurPalette.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Palettes/ozgurPalette.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/black.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/black.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/black.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/black.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/blue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/blue.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/blue.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/brown.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/brown.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/brown.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/brown.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/gray.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/gray.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/gray.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/gray.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/green.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/green.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/green3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/pink.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/pink.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/purple.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/purple.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/red.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/red.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/white.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/white.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/white.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/white.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/yellow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/yellow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/yellow.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/yellow.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/yellow2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/yellow2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/black.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/blue.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/brown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/brown.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/gray.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/green3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/pink.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/purple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/purple.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/red.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/white.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/sprites/ozgurSprites/yellow2.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +144,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainScreenManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PerlinGeneratorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56073df97ede4f769c2cc45d546d986d172200/f5/3f014d03/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -161,6 +290,10 @@
       <workItem from="1690553860627" duration="898000" />
       <workItem from="1691542143873" duration="4814000" />
       <workItem from="1691551122616" duration="15151000" />
+      <workItem from="1691776345374" duration="128000" />
+      <workItem from="1691960629392" duration="735000" />
+      <workItem from="1692738629217" duration="2390000" />
+      <workItem from="1693838321150" duration="4529000" />
     </task>
     <task id="LOCAL-00001" summary="player movement and camera follow added">
       <created>1677587925849</created>

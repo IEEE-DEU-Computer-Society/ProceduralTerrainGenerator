@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Random = UnityEngine.Random;
 
 public class TerrainGenerator : PerlinGeneratorBase
 {
@@ -20,7 +19,6 @@ public class TerrainGenerator : PerlinGeneratorBase
     [Range(0f, 1f)] public float persistence;
 
     private Dictionary<Vector2Int, float> terrainNoiseMap;
-    private Vector2 randomize;
 
     private void Awake()
     {
@@ -28,18 +26,12 @@ public class TerrainGenerator : PerlinGeneratorBase
         ChangeSeed(0);
         
         MovementManager.OnMovement += GenerateTerrain;
-        UIManager.OnUIChange += GenerateTerrain;
+        MainScreenManager.OnUIChange += GenerateTerrain;
     }
 
     private void GenerateTerrain()
     {
-        terrainNoiseMap = GenerateNoiseMap(offset, randomize,octaveNumber, noiseScale, persistence, lacunarity);
+        terrainNoiseMap = GenerateNoiseMap(offset,octaveNumber, noiseScale, persistence, lacunarity);
         GenerateTiles(terrainTilemap, terrainNoiseMap, terrainTileList, terrainTileRangeList);
-    }
-
-    public void ChangeSeed(int newSeed)
-    {
-        Random.InitState(newSeed);
-        randomize = new Vector2(Random.Range(-100000f, 100000f), Random.Range(-100000f, 100000f));
     }
 }
